@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -64,46 +65,60 @@ export default function Home() {
     />
   ))}
 
-  {/* DARK LAYER */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/90"></div>
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/75"></div>
 
-  {/* SOFT GOLD GLOW */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,215,0,0.18),transparent_60%)]"></div>
+  {/* GOLD ACCENT */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,215,0,0.10),transparent_65%)]"></div>
 
   {/* CONTENT */}
   <div className="relative z-10 px-4 sm:px-6 text-center">
+    <div className="max-w-4xl mx-auto">
 
-    <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl px-5 py-8 sm:px-10 sm:py-10 max-w-3xl mx-auto shadow-2xl">
-
-      {/* BADGE (ANIMATED) */}
-      <span className="inline-block bg-yellow-500 text-black px-3 py-1 rounded-full text-xs sm:text-sm font-semibold tracking-wide animate-pulse shadow-md">
+      {/* BADGE */}
+      <span className="inline-block bg-yellow-500 text-black px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide shadow-lg">
         ✨ Welcome to Excellence
       </span>
 
       {/* TITLE */}
-      <h1 className="mt-4 text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-white">
+      <h1
+        className="mt-6 text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight text-white"
+        style={{
+          textShadow: "0 4px 20px rgba(0,0,0,0.6)",
+        }}
+      >
         Kimana Stars of{" "}
         <span className="text-yellow-400">Hope School</span>
       </h1>
 
       {/* DESCRIPTION */}
-      <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
+      <p
+        className="mt-6 text-base sm:text-lg md:text-xl text-gray-100 leading-relaxed max-w-3xl mx-auto"
+        style={{
+          textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+        }}
+      >
         A Christ-centered institution committed to nurturing disciplined,
-        creative, and academically excellent learners prepared for a bright future.
+        creative, and academically excellent learners prepared for a bright
+        future.
       </p>
 
       {/* BUTTONS */}
-      <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+      <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
 
-        {/* PRIMARY BUTTON */}
-        <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 shadow-lg">
-          Enroll Now
-        </button>
+        <Link
+    to="/contact"
+    className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-xl text-center"
+  >
+    Enroll Now
+  </Link>
 
-        {/* SECONDARY BUTTON */}
-        <button className="border border-white/70 hover:bg-white hover:text-black px-6 py-3 rounded-full transition transform hover:scale-105">
-          Contact Us
-        </button>
+  <Link
+    to="/contact"
+    className="border border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-center"
+  >
+    Contact Us
+  </Link>
 
       </div>
 
@@ -111,13 +126,14 @@ export default function Home() {
   </div>
 
   {/* SCROLL INDICATOR */}
-  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center text-white opacity-70 animate-bounce">
-    <span className="text-xs tracking-widest">SCROLL</span>
-    <div className="w-[2px] h-5 bg-white mt-1"></div>
+  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/80 animate-bounce">
+    <span className="text-xs tracking-[0.3em] font-medium">
+      SCROLL
+    </span>
+    <div className="w-[2px] h-6 bg-white/80 mt-2 rounded-full"></div>
   </div>
 
 </section>
-      
 
       <section className="py-24 px-6 bg-white">
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
